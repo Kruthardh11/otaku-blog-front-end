@@ -1,8 +1,7 @@
-import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
-import '../styles.scss'
+import '../index.css';
 
 const Login=()=>{
 
@@ -31,14 +30,14 @@ const Login=()=>{
         }
       };
     return(
-        <div className="auth">
-            <h1>Login</h1>
-            <form>
-                <input type="text" placeholder="username" name="username" onChange={handleChange}/>
-                <input type="password" placeholder="password" name="password" onChange={handleChange} />
-                <button onClick={handleSubmit}>Login</button>
+        <div className=" flex flex-col items-center justify-center h-screen bg-indigo-500">
+            <h1 className="mb-[3%] text-4xl font-bold">Login</h1>
+            <form className=" flex flex-col p-[5%] bg-white  rounded-full">
+                <input className="p-[10%] rounded-full" type="text" placeholder="username" name="username" onChange={handleChange}/>
+                <input className="p-[10%] rounded-full" type="password" placeholder="password" name="password" onChange={handleChange} />
+                <button className=" p-[15%] text-lg font-bold " onClick={handleSubmit}>Login</button>
                 {err && <p>{err}</p>}
-                <span>Don't you have an account?<Link to='/register' >Register</Link></span>
+                <span className="p-[5%] font-normal text-lg">Don't you have an account?<Link to='/register' className="font-semibold text-xl">Register</Link></span>
             </form>
         </div>
     )

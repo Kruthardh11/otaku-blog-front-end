@@ -31,13 +31,13 @@ const Menu=({cat})=>{
     }, [cat])
 
     return(
-        <div className="menu">
-            <h1>other posts you may like</h1>
+        <div className="flex flex-2 flex-col gap-[10px]">
+            <h1 className="font-semibold text-lg " >Similar posts</h1>
             {posts.map((post) => (
-        <div className="post" key={post.id}>
-          <img src={`../upload/${post?.img}`} alt="" />
+        <div  key={post.id}>
+          <img  className="w-[100%] h-[200px] object-cover"  src={`../upload/${post?.img}`} alt="" />
           <h2>{post.title}</h2>
-          <button>Read More</button>
+          <button className="p-[1%] w-max font-bold ">Read More</button>
         </div>
       ))}
         </div>
