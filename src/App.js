@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     element: <Register/>,
   },
 ]);
-//bg-[url('C:\react\RealBlog\front-end\public\images\a.jpg')] bg-cover bg-no-repeat bg-opacity-25
+
 function App() {
   return (
     <div className="flex justify-center ">
