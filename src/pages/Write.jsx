@@ -60,11 +60,11 @@ const Write=()=>{
     return(
         <div>
             <Navbar/>
-        <div className="flex mt-[2%] gap-20 p-[1%]">
+        {/* <div className="flex mt-[2%] gap-20 p-[1%]">
             <div className="flex flex-col flex-5 gap-10 ">
                 <input className="mx-[5%] border-double border-4 border-black" type="text"  placeholder="Title"  onChange={(e)=>setTitle(e.target.value)}/>
                 {/* <input className="mx-[5%] border-double border-4 border-black" type="text"  placeholder="Summary"  onChange={(e)=>setSummary(e.target.value)}/> */}
-                <div className="h-[400px] w-[1000px] mb-[5%] ml-[5%] overflow-scroll">
+                {/* <div className="h-[400px] w-[1000px] mb-[5%] ml-[5%] overflow-scroll">
              <ReactQuill className="h-[100%] border-none" theme="snow" value={value} onChange={setValue} />
              </div>
             </div>
@@ -101,7 +101,97 @@ const Write=()=>{
                 </div>
             </div>
             
+        </div> */} 
+        <div className="flex justify-center mt-10">
+  <div className="w-2/3 bg-white shadow-lg rounded-lg p-8">
+    <div className="flex flex-col gap-4 mb-8">
+      <input
+        className="border-2 border-black px-4 py-2 rounded-lg"
+        type="text"
+        placeholder="Title"
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <div className="h-96 overflow-scroll">
+        <ReactQuill theme="snow" value={value} onChange={setValue} />
+      </div>
+    </div>
+    <div className="flex gap-8">
+      <div className="flex-1">
+        <label
+          htmlFor="file"
+          className="block text-center font-bold text-lg mb-4 cursor-pointer"
+        >
+          Upload Image
+        </label>
+        <input
+          style={{ display: "none" }}
+          type="file"
+          id="file"
+          name=""
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <button
+          className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
+          onClick={handleClick}
+        >
+          Publish
+        </button>
+      </div>
+      <div className="flex-1">
+        <div className="border-2 border-gray-400 rounded-lg p-4">
+          <h1 className="text-lg font-bold mb-4">Category</h1>
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-2">
+              <input
+                type="radio"
+                checked={cat === "anime-review"}
+                name="cat"
+                value="anime-review"
+                id="anime-review"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="anime-review">Review</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="radio"
+                checked={cat === "personal-tt"}
+                name="cat"
+                value="personal-tt"
+                id="personal-tt"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="personal-tt">Top 10</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="radio"
+                checked={cat === "recommendations"}
+                name="cat"
+                value="recommendations"
+                id="recommendations"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="recommendations">Recommendations</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="radio"
+                checked={cat === "other"}
+                name="cat"
+                value="other"
+                id="other"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="other">Other</label>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         <Footer/>
         </div>
     )

@@ -47,13 +47,13 @@ const Single=()=>{
       }
 
     return(
-        <div className="bg-fuchsia-100">
+        <div className="bg-gray-300">
             <Navbar/>
-        <div className="flex gap-50">
+        <div className="flex flex-col items-center justify-center mx-20 shadow-lg rounded-lg bg-white">
             
-            <div className="flex flex-5 flex-col gap-30 p-[20%] pr-[5%] pt-[1%]">
-            <h1 className="text-6xl font-merriweather pt-[5%] pb-[3%]">{getText(post.title)}</h1>
-            <img className="w-[1000px] h-[600px] object-cover py-[3%]" alt="blog " src={`../upload/${post?.image}`}  />
+            <div className="flex flex-5 flex-col gap-30 p-[20%] pr-[5%]  pt-[1%]">
+            <h1 className="text-5xl font-merriweather pt-[5%] pb-[3%]">{getText(post.title)}</h1>
+            <img className="w-[900px] h-[600px] object-cover py-10" alt="blog " src={`../upload/${post?.image}`}  />
             <div className="flex items-center gap-[15px]">
                 
             {post.userImg && <img alt="user " src={post.userImg} className="w-[75px] h-[75px] object-cover" />}
@@ -64,12 +64,12 @@ const Single=()=>{
             
         { currentUser.username === post.username &&   <div className="flex gap-[10px] ">
                 <Link to={`/write?edit=2`} state={post} > 
-                <BsFillPencilFill className="w-[30px] h-[30px] mx-[20px]"/></Link>
+                <BsFillPencilFill className="w-[30px] h-[30px] mx-[20px] border border-black"/></Link>
                  <BsFillTrashFill className="w-[30px] h-[30px] ml-[10px]" onClick={handleDelete}/>
             </div>}
             </div>
             
-            <div className="font-openSans text-2xl text-justify leading-7  py-[5%]">{ getText(post.desc)}</div> 
+            <div className="font-openSans text-lg text-justify leading-7  py-[5%] pr-10  ">{ getText(post.desc)}</div> 
             </div>
             <style>
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap');
@@ -77,7 +77,6 @@ const Single=()=>{
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>
-            <div><Menu/></div>
         </div>
         <Footer/>
         </div>

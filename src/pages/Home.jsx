@@ -27,7 +27,7 @@ const Home=()=>{
     return(
         <div>
             <Navbar/>
-        <div className="mb-[10%] m-[3%]">
+        {/* <div className="mb-[10%] m-[3%]">
             <div>Please Login to read more of the blog</div>
               <div className="flex mt-[10%] flex-col gap-100">
                 {posts.map((post)=>(
@@ -49,9 +49,29 @@ const Home=()=>{
                         </div>
                     </div>
                 ))}
-              </div>
-              
+              </div> */}
+{/*               
+        </div> */}
+        <div className="my-10 mx-3">
+  <div className="text-lg font-bold mb-6">Please login to read more of the blog</div>
+  <div className="flex flex-col gap-10">
+    {posts.map((post) => (
+      <div className="flex flex-col md:flex-row-reverse md:items-center md:gap-10 bg-gray-100 p-4 md:p-8 rounded-lg shadow-lg" key={post.id}>
+        <div className="flex relative w-full md:w-1/2 mb-4 md:mb-0 ">
+        <img className="w-full h-full object-cover rounded-lg border-2 border-black" src={`../upload/${post?.image}`} alt="Post" />
+        
         </div>
+            <div className="w-full md:w-1/2">
+                <h1 className="text-4xl mb-4 font-bold text-indigo-600">{getText(post.title)}</h1>
+                <p className="text-xl mb-6 font-serif">{getText(post.desc).slice(0, 100)}...</p>
+                <button className="border-double border-4 border-indigo-600 py-2 px-4 rounded-md text-lg font-bold bg-transparent hover:bg-indigo-600 hover:text-white">
+                <Link to={`post/${post.id}`}>Read More</Link>
+                </button>
+                </div>
+            </div>
+        ))}
+        </div>
+    </div>
         <Footer/>
         </div>
     )

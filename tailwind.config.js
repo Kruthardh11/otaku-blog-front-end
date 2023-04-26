@@ -8,7 +8,10 @@ module.exports = {
       fontFamily: {
         merriweather: "'Merriweather', serif;",
         openSans:"'Open Sans', sans-serif;",
-      }
+      },
+      colors: {
+        gold: '#FFD700',
+      },
     },
   },
   plugins: [],
