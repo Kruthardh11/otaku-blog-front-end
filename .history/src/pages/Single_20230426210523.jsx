@@ -7,8 +7,8 @@ import axios from "axios";
 import moment from "moment";
 import { AuthContext } from "../context/authContext";
 import '../index.css';
-//import { BsFillTrashFill } from "react-icons/bs"
-//import { BsFillPencilFill } from "react-icons/bs";
+import { BsFillTrashFill } from "react-icons/bs"
+import { BsFillPencilFill } from "react-icons/bs";
 
 const Single=()=>{
 
@@ -64,9 +64,8 @@ const Single=()=>{
             
         { currentUser.username === post.username &&   <div className="flex gap-[10px] ">
                 <Link to={`/write?edit=2`} state={post} > 
-                <div>Edit</div></Link>
-                
-                 <div onClick={handleDelete}> Delete</div>
+                <BsFillPencilFill className="w-[30px] h-[30px] mx-[20px] border border-black"/></Link>
+                 <BsFillTrashFill className="w-[30px] h-[30px] ml-[10px]" onClick={handleDelete}/>
             </div>}
             </div>
             

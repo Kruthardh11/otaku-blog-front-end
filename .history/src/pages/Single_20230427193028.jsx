@@ -64,7 +64,7 @@ const Single=()=>{
             
         { currentUser.username === post.username &&   <div className="flex gap-[10px] ">
                 <Link to={`/write?edit=2`} state={post} > 
-                <div>Edit</div></Link>
+                <div>edit</div></Link>
                 
                  <div onClick={handleDelete}> Delete</div>
             </div>}
